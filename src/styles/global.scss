@@ -1,60 +1,80 @@
-$font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+// $font-family: -apple-system,BlinkMacSystemFont,"Oswald",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"elvetica Neue",sans-serif;
+$font-family: 'Bona Nova', serif;
 
-html,
+
 body {
   margin: 0;
-  padding: 0;
+  font-family: $font-family;
+  line-height: 1.4rem;
+  // background-color: lightgray;
 }
 * {
-  margin-top: 0
+  margin-top: 0;
+  margin-bottom: 0;
 }
-body.light {
-  --primary-color: #381696;
-  --primary-text-color: #fff;
-  --featured-bg: #493b8a;
-  --featured-text: #fff;
-  --secondary-color: #10072b;
-  --background: #fff;
-  --site-header: var(--background);
-  --card-bg: #fff;
-  --card-bdr: #eee;
-  --card-shadow: #d5d5d5;
-  --btn-bg: var(--background);
-  --btn-bdr: #d3d6e7;
-  --btn-text-color: #868892;
-  --btn-hover-bg: var(--btn-bdr);
-  --btn-hover-text-color: #00062b;
-  --contact-bg: #f7f8fe;
-  --contact-bdr: #d3d6e7;
-  --input-bg: var(--background);
+
+.hr-contact {
+  border: solid lightgray 3px;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
 }
-body.dark {
-  --primary-color: #9984d5;
-  --primary-text-color: #fff;
-  --featured-bg: #66578d;
-  --featured-text: #fff;
-  --secondary-color: #66578d;
-  --background: #0A041A;
-  --text-color: rgba(255,255,255,0.88);
-  --text-secondary-color: rgba(255,255,255,0.66);
-  --site-header: var(--background);
-  --card-bg: #181326;
-  --card-bdr: #181326;
-  --card-shadow: #020204;
-  --btn-bg: var(--background);
-  --btn-bdr: #d3d6e7;
-  --btn-text-color: #868892;
-  --btn-hover-bg: var(--btn-bdr);
-  --btn-hover-text-color: #00062b;
-  --contact-bg: var(--card-shadow);
-  --contact-bdr: var(--card-bg);
-  --input-bg: var(--card-bg);
+.hr-clients {
+  border: solid lightgray 3px;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  width: 80%;
 }
+
+.hr-about {
+  border: solid lightgray 3px;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  width: 80%;
+}
+
+.hr-about-commun {
+  border: solid lightgray 3px;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.hr-services {
+  border: solid lightgray 3px;
+  border-radius: 20px;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  width: 80%;
+}
+
+p, h1, h3 {
+  max-width: 85%;
+}
+
+.cincy {
+  margin-top: 0;
+  text-transform: uppercase;
+  margin-left: 8rem;
+  top: 0;
+  font-weight: bold;
+  font-size: .95rem;
+  padding: 0;
+}
+
+.red-text {
+  color:#93291E;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
 /* System Fonts as used by Medium and WordPress */
 body {
   font-family: $font-family;
-  border-top: 10px solid var(--primary-color);
-  background-color: var(--background);
+  // border-top: 10px solid var(--primary-color);
   color: var(--text-color);
 }
 a {
@@ -65,27 +85,28 @@ a {
   }
 }
 .site-wrapper {
-  padding: 32px;
-  max-width: 1140px;
-  margin: 0 auto;
   img {
     max-width: 100%;
   }
 }
 .navigation {
+  padding: 3rem 5rem;
+  padding-bottom: 1rem;
   display: flex;
   align-items: center;
-  font-weight: 300;
+  font-weight: 800;
+  font-size: 1.45rem;
   a {
-    color: #888;
+    color: white;
     text-decoration: none;
+    font-weight: bold;
     margin: 0 8px 0;
     &[aria-current] {
       color: var(--primary-color);
       font-weight: 700;
     }
     &:hover {
-      color: var(--primary-color);
+      color:gray;
     }
     &:last-child {
       margin-right: 0;
@@ -95,10 +116,13 @@ a {
 .site-header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
-  background: var(--site-header);
-  margin-bottom: 32px;
+  padding: 0.4em 1em;
+  padding-bottom: .75rem;
+  background: #ED213A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
   align-items: center;
+  width: 100%;
 }
 .site-title a {
   color: var(--primary-color);
@@ -116,15 +140,14 @@ a {
   margin-bottom: 0.5rem;
 }
 .button {
-  padding: 18px 27px;
+  padding: 18px 57px;
   display: inline-block;
-  background: var(--btn-bg);
-  border: 1px solid var(--btn-bdr);
+  border: 1px solid pink;
   border-radius: 9px;
   text-decoration: none;
   color: var(--btn-text-color);
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 800;
   margin: 0 20px 0 0;
   transition: background-color .3s linear;
   &.-primary {
@@ -142,6 +165,8 @@ a {
     color: var(--btn-hover-text-color);
   }
 }
+
+
 .primary-content {
   font-size: 18px;
   margin-bottom: 32px;
@@ -209,78 +234,371 @@ a {
   }
 }
 .grids {
-  display: grid;
+  display: grids;
   grid-template-columns: 1fr;
   grid-gap: 32px;
   margin-top: 32px;
-}
-.card {
-  display: grid;
-  background-color: var(--card-bg);
-  border-radius: 9px;
-  border: 1px solid var(--card-bdr);
-  box-shadow: 0 0 30px var(--card-shadow);
-  overflow: hidden;
-  line-height: 1.5;
-  &:hover .post-link {
-    color: var(--primary-color);
-  }
-  > a img {
-    display: block;
-  }
-  > header {
-    padding: 24px;
-  }
-  > h2:first-child {
-    margin: 0 0 0.5rem 0;
-  }
-  .post-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-  }
-  .post-meta {
-    font-weight: 100;
-    margin-bottom: 0;
-  }
-  .post-link {
-    color: var(--text-color);
-    text-decoration: none;
-  }
-}
-.post-meta {
-  font-size: 0.8rem;
-  color: var(--text-secondary-color);
-}
-.site-footer {
   text-align: center;
-  margin: 90px 0 16px;
-  color: #666;
-  a {
-    font-weight: 700;
+  max-width: 98vw;
+}
+
+
+.site-footer {
+  background: #ED213A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+  color: white;
+  display: flex;
+  padding: 2rem 2rem;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 16px;
+  position: static;
+}
+
+/* Portrait and Landscape */
+@media only screen 
+and (min-width: 768px) {
+  .grids {
+    grid-template-columns: 1fr 1fr;
   }
 }
+@media only screen 
+  and (min-width: 1024px) {
+  .grids {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .two-grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 64px;
+  }
+}
+
+.mode-container {
+  width: 24px;
+  height: 24px;
+  margin-left: 20px;
+}
+
+.logo {
+  height: 100px;
+  width: 170px;
+  margin-left: 3.2rem;
+}
+
+.head-services {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+
+
+/*-------SERVICES PAGE ------ */
+
+.services-container, .beyond-container {
+  margin: 4rem 8rem;
+  text-align: center;
+}
+.services-header {
+    color:#93291E;
+    margin: 3rem auto;
+    font-size: 2rem;
+}
+
+.beyond-header {
+  color:#93291E;
+  font-size: 2rem;
+  margin: 3rem auto;
+}
+
+.services-container {
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.services-text {
+  margin: 2rem 8rem;
+}
+
+.experience {
+  font-size: 1.35rem;
+  margin: 2rem 7rem;
+}
+
+
+h4 {
+  font-size: 1.65rem;
+  margin: .5rem;
+}
+
+
+.card-container {
+  text-align: center;
+  justify-content: center;
+  margin: 1.25rem;
+}
+
+.card-text {
+  text-align: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
+.card-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card-image {
+  border-radius: 10px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  margin: 15px;
+  float: left;
+  width: 31%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+// .container {
+//   padding: 4px 16px;
+// }
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/*------ CLIENTS PAGE ---- */
+
+
+
+.clients-header {
+  text-align: center;
+  margin: 3rem 8rem;
+}
+
+.clients-text {
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  background-color: white;
+  margin: 2.5rem;
+  padding: 1rem 0rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  margin: 10px 25px;
+  float: left;
+  width: 25%;
+  height: 25%;
+  object-fit: cover;
+  align-items: center;
+}
+
+.client-description {
+  font-weight: 0;
+}
+
+/*------ ABOUT PAGE ---- */
+.history-container,
+.outreach-container,
+.img-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.history, .outreach {
+  color:#93291E;
+  margin: 0 auto;
+}
+
+.p-about {
+  text-align: center;
+  margin: 2rem 10rem;
+  font-size: 1.5rem;
+  line-height: 1.65rem;
+}
+
+
+.origins {
+  width: 25%;
+  height: 20%;
+  object-fit: cover;
+  margin-bottom: 3rem;
+  border-radius: 20px;
+}
+
+ .stiched-images {
+   border-radius: 45px;
+   padding: 35px;
+ }
+
+ .history-container {
+   align-items: center;
+ }
+
+ .outreach {
+   margin-bottom: 2rem;
+   text-align: center;
+ }
+ .outreach-text {
+   margin: 3rem 6rem;
+   text-align: center;
+   font-size: 1.35rem;
+   
+ }
+
+ .img-portfolio-title {
+   font-size: 1.75rem;
+   margin: 2rem 8rem;
+   line-height: 1.85rem;
+ }
+
+
+ /*------ HOME PAGE ---- */
+ 
+ .home-page {
+  // background-image: url("../images/home2.png");
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../images/home2.png");
+  height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  position: relative;
+  // filter: grayscale(100%);
+ 
+}
+
+ .intro {
+   text-align: center;
+   position: absolute;
+   top: 55%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: white;
+ }
+ .grow {
+   text-align: center;
+   margin-bottom: 2rem;
+   font-size: 3.25rem;
+
+ }
+ .boost {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+ }
+ .home-btn {
+  background: #ED213A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */;
+  margin-right: 3rem;
+  padding: 20px 40px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 1.05rem;
+  font-style: italic;
+ }
+ .market {
+    margin-top: 5rem;
+    font-size: 1.75rem;;
+    line-height: 1.5rem;
+ }
+
+ .brands-trust {
+   margin-top: 4rem;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   justify-content: center;
+   font-style: italic;
+ }
+
+ .brand-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  background-color: white;
+  margin: 2.5rem;
+  padding: 1rem 0rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+
+/*------ CONTACT PAGE ---- */
+
+
+
+.contact-text {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center; 
+}
+
+.contact-info-text {
+  width: 85%;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin: 3rem;
+}
+
+.contact-details {
+  margin-top: 3rem;
+  line-height: 1.75rem;
+}
+
 .form-container {
-  background-color: var(--contact-bg);
+  background-color: white;
   padding: 32px;
-  border: 1px solid var(--contact-bdr);
   border-radius: 9px;
   label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--text-secondary-color);
+    color: black;
   }
   input[type=text],
   input[type=email],
   textarea {
     appearance: none;
-    border: 1px solid var(--card-shadow);
-    color: var(--text-secondary-color);
+    border: 1px solid black;
+    color: black;
     border-radius: 6px;
     line-height: 32px;
     padding: 6px 12px;
-    width: calc(100% - 24px);
+    width: 100%;
     margin-bottom: 1.5rem;
-    background-color: var(--input-bg);
+    margin-top: .5rem;
+    background-color: white;
     font-family: $font-family;
   }
   textarea {
@@ -297,111 +615,18 @@ a {
     }
   }
 }
-/* Portrait and Landscape */
-@media only screen 
-and (min-width: 768px) {
-.grids {
-  grid-template-columns: 1fr 1fr;
-}
-}
-@media only screen 
-  and (min-width: 1024px) {
-  .grids {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .two-grids {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 64px;
-  }
+
+.submit-btn {
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color:#93291E;
+  color:white;
+  margin-top: 0;
 }
 
-
-// theme-changer
-.theme-changer {
-  display: none;
-}
-body.dark {
-  .gg-moon {
-    display: none;
-  }
-}
-body.light {
-  .gg-sun {
-    display: none;
-  }
-}
-.mode-container {
-  width: 24px;
-  height: 24px;
-  margin-left: 20px;
-}
-// CSS.gg icons for sun and moon
-.gg-sun {
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  transform: scale(var(--ggs,1));
-  width: 24px;
-  height: 24px;
-  background:
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat 5px -6px/2px 6px,
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat 5px 14px/2px 6px,
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat -8px 5px/6px 2px,
-    linear-gradient(to bottom,
-        currentColor 4px,transparent 0)
-        no-repeat 14px 5px/6px 2px;
-  border-radius: 100px;
-  box-shadow: inset 0 0 0 2px;
-  border: 6px solid transparent
-}
-.gg-sun::after,
-.gg-sun::before {
-  content: "";
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  border-right: 4px solid;
-  border-left: 4px solid;
-  left: -6px;
-  top: 5px
-}
-.gg-sun::before {
-  transform: rotate(-45deg)
-}
-.gg-sun::after {
-  transform: rotate(45deg)
-}
-.gg-moon,
-.gg-moon::after {
-    display: block;
-    box-sizing: border-box;
-    border-radius: 50%
-}
-.gg-moon {
-    overflow: hidden;
-    position: relative;
-    transform: rotate(-135deg) scale(var(--ggs,1));
-    width: 20px;
-    height: 20px;
-    border: 2px solid;
-    border-bottom-color: transparent
-}
-.gg-moon::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 18px;
-    border: 2px solid transparent;
-    box-shadow: 0 0 0 2px;
-    top: 8px;
-    left: 2px
+.contact-p {
+  margin-top: 1.5rem;
 }

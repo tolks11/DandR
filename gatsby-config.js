@@ -53,12 +53,17 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve: `gatsby-transformer-sharp`
+    },
     `gatsby-plugin-sass`, 
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-dark-mode',
+    `gatsby-plugin-sharp`,
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-image`,
+    `bootstrap`
   ],
 }

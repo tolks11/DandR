@@ -1,31 +1,67 @@
 import React from "react"
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby'
 import Layout from "../components/layout"
-import PostLink from "../components/post-link"
-import HeroHeader from "../components/heroHeader"
+import { StaticImage } from "gatsby-plugin-image";
+import {Link} from 'gatsby'
 
-const IndexPage = ({
-  data: {
-    site,
-    allMarkdownRemark: { edges },
-  },
-}) => {
-
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+const IndexPage = ({data: {site}}) => {
 
   return (
     <Layout>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
-      <HeroHeader/>
-      <h2>Blog Posts &darr;</h2>
+      <div className="home-page">
+        <div className="intro">
+            <h1 className="grow">Grow your business.</h1>
+            <p className="boost">Give your company or brand a boost with custom apparel!</p>
+            <button className="home-btn"><Link to="/services">LEARN MORE &rarr; </Link> </button>
+            <p className="market">Market yourself, establish your brand, and build a sense of community with apparel you'll love.</p>
+        </div>
+        </div>
+      <hr className="hr-index" class="rounded"/>
+      <div>
       <div className="grids">
-        {Posts}
+        <h1 className="brands-trust"><span className="red-text">Apparel From Brands You Trust</span></h1>
+          <div className="brand-gallery">
+            <StaticImage
+              className="image"
+              src="../images/brands/nike.png"
+              />
+            <StaticImage
+              className="image"
+              src="../images/brands/TNF.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/car.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/EB.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/Hanes.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/UA.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/gildan.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/AA.png"
+              />
+          <StaticImage
+              className="image"
+              src="../images/brands/champ.png"
+              />
+          </div>
+      </div>
       </div>
     </Layout>
   )
@@ -38,20 +74,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
-      }
-    }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-            thumbnail
-          }
-        }
       }
     }
   }

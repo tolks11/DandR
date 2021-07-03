@@ -11,38 +11,44 @@ const ContactPage = ({
   return (
     <Layout>
       <Helmet>
-        <title>Contact — {site.siteMetadata.title}</title>
+        {/* <title>Contact — {site.siteMetadata.title}</title> */}
         <meta name="description" content={"Contact page of " + site.siteMetadata.description} />
       </Helmet>
-      <div className="two-grids -contact">
-        <div className="post-thumbnail" style={{backgroundImage: `url('/assets/alexander-andrews-HgUDpaGPTEA-unsplash.jpg')`, marginBottom: 0}}>
-          <h1 className="post-title">Get in Touch</h1>
-          <p>Let me help you kick start your next project &rarr;</p>
+        <div className="contact-text">
+          <h2>Get in touch and <span className="red-text">stand out</span> from the competition!</h2>
         </div>
-        <div>
-          <form className="form-container" action="https://sendmail.w3layouts.com/SubmitContactForm" method="post">
-            <div>
-              <label htmlFor="w3lName">Name</label>
-              <input type="text" name="w3lName" id="w3lName"/>
+        <div className="contact-page">
+        <div className="two-grids -contact">
+          <div className="contact-info-text">
+              <p>Please provide any questions or comments you have, along with the quantity 
+              and sizes regarding your order and we'll be happy to give you a free quote!</p>
+              <p className="contact-p">You can also request <span className="red-text">free samples</span> of the item you're screen-printing or embroidering 
+                <span className="red-text"> to make sure the fit is what you expect</span>!
+              </p>
+              <hr className="hr-contact"/>
+              <div className="contact-details">
+                <span className="red-text">
+                <p>5560A Cheviot Rd</p>
+                <p>Cincinnati, OH, 45247</p>
+                <p>sales@dandrpromotions.com</p>
+                <p>513-598-1881</p>
+                </span>
+              </div>
             </div>
-            <div>
-              <label htmlFor="w3lSender">Email</label>
-              <input type="email" name="w3lSender" id="w3lSender"/>
-            </div>
-            <div>
-              <label htmlFor="w3lSubject">Subject</label>
-              <input type="text" name="w3lSubject" id="w3lSubject"/>
-            </div>
-            <div>
-              <label htmlFor="w3lMessage">Message</label>
-              <textarea name="w3lMessage" id="w3lMessage"></textarea>
-            </div>
-            <div style={{display: "flex", justifyContent: "flex-end"}}>
-              <input type="submit" className="button -primary" style={{marginRight: 0}} />
-            </div>
-          </form>
+          <div className="form-container">
+            <form  name="contact"  method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
+              <p>
+                <label>Your Name: <input type="text" name="name" /></label>   
+              </p>
+                <label>Your Email: <input type="email" name="email" /></label>
+                <label>Your Job Description: <textarea name="message"></textarea></label>
+                <button onClick={() => console.log('thank you!')}  className="submit-btn" type="submit">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
+      
     </Layout>
   )
 }
