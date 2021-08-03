@@ -22,7 +22,7 @@ const IndexPage = ({data: {site}}) => {
       <hr className="hr-index" class="rounded"/>
       <div>
       <div className="grids">
-        <h1 className="brands-trust"><span className="red-text">Apparel From Brands You Trust</span></h1>
+        <h1 className="brands-trust"><span className="red-text">Apparel From Brands You Trust, Customized For You</span></h1>
           <div className="brand-gallery">
             <StaticImage
               className="image"

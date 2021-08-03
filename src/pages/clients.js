@@ -18,7 +18,7 @@ const Clients = () => {
             <div className="gallery">
                 <StaticImage
                 className="image"
-                src="../images/clients/reds.jpg"
+                src="../images/clients/Reds.jpg"
                 />
                 <StaticImage
                 className="image"
@@ -58,11 +58,23 @@ const Clients = () => {
                 />
                 <StaticImage
                 className="image"
-                src="../images/clients/Shoptech.jpg"
+                src="../images/clients/Interlink.jpg"
                 />
                 <StaticImage
                 className="image"
                 src="../images/clients/150th.jpg"
+                />
+                <StaticImage
+                className="image"
+                src="../images/clients/Ranz.jpg"
+                />
+                <StaticImage
+                className="image"
+                src="../images/clients/STi.jpg"
+                />
+                <StaticImage
+                className="image"
+                src="../images/clients/CRV.jpg"
                 />
             </div>
         </div>
